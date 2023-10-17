@@ -1,0 +1,124 @@
+/** @format */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+  overflow-x: hidden;
+}
+
+body {
+  font-family: "Rubik", sans-serif;
+  overflow-x: hidden;
+}
+
+.container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 4rem;
+}
+
+.nav-main {
+  background-image: url(img/space.jpg);
+  width: 100%;
+  height: 100vh;
+  background-size: cover;
+  position: relative;
+  /* background-position: center; */
+}
+
+.all-navs {
+  display: flex;
+  justify-content: space-between;
+  color: #fff;
+  font-size: 1.8rem;
+  align-items: center;
+  justify-items: center;
+}
+
+.primary-nav {
+  display: flex;
+  list-style: none;
+  font-size: 1.8rem;
+  gap: 2.5rem;
+  background: hsl(0, 70%, 10%);
+}
+
+a {
+  color: #fff;
+  text-decoration: none;
+}
+
+/* hambug */
+
+.hamburger-main {
+  display: none;
+}
+
+button {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+/* .hamburger-main {
+  width: 7rem;
+  aspect-ratio: 1;
+} */
+
+.icon-nav {
+  width: 4rem;
+  height: 4rem;
+  color: #fff;
+}
+
+/* <ion-icon class="icon-nav" name="close"></ion-icon> */
+.icon-nav[name="close"] {
+  display: none;
+}
+
+@media (max-width: 50em) {
+  .hamburger-main {
+    display: block;
+  }
+  .primary-nav {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    align-items: center;
+    justify-items: center;
+    padding-block: 10rem;
+    gap: 5rem;
+    background-color: hsl(0 0% 20% / 0.1);
+    backdrop-filter: blur(1rem);
+    transition: all 0.4s ease-in;
+    transform: translateX(100%);
+
+    flex-direction: column;
+
+    opacity: 0;
+    pointer-events: none;
+    visibility: hidden;
+  }
+
+  .nav-open .primary-nav {
+    opacity: 1;
+    pointer-events: auto;
+    visibility: visible;
+    transform: translateX(0);
+  }
+
+  .nav-open .icon-nav[name="menu"] {
+    display: none;
+  }
+
+  .nav-open .icon-nav[name="close"] {
+    display: block;
+  }
+}
